@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Projetos - Turma de Web Dev 2026</title>
+    <style>
+        :root { --bg: #121214; --text: #ffffff; --card-bg: #202024; --primary: #00b37e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
+        header { margin-bottom: 40px; }
+        h1 { color: var(--primary); }
+        
+        /* O GRANDE CONTÊINER COLETIVO */
+        .grid-estudantes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* O ESTILO BASE QUE ELES VÃO USAR */
+        .card-estudante {
+            background: var(--card-bg);
+            border: 2px solid #323238;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .card-estudante:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .btn-like { background: var(--primary); border: none; color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚀 TechHub - Galeria Colaborativa da Turma</h1>
+        <p>Construído coletivamente usando HTML, CSS e Git/GitHub Pages</p>
+    </header>
+
+    <!-- ÁREA DE CONFLITO PROPOSITAL: Todos vão tentar inserir seus cards aqui dentro -->
+    <main class="grid-estudantes" id="galeria">
+        
+        <!-- EXEMPLO DE CARD (O Aluno deve copiar essa estrutura) -->
+        <div class="card-estudante">
+            <h3>👤 Desenvolvedor Modelo</h3>
+            <p>Stack: HTML, CSS, JavaScript</p>
+            <a href="https://github.com" target="_blank" style="color: #8257e5;">Ver GitHub</a>
+            <br>
+            <button class="btn-like" onclick="adicionarInteracao(this)">❤️ <span>0</span></button>
+        </div>
+
+        <!-- OS ALUNOS ADICIONARÃO OS CARDS DELES ABAIXO DESTA LINHA -->
+
+    </main>
+
+    <script>
+        // Função global simples para interação
+        function adicionarInteracao(botao) {
+            const contador = botao.querySelector('span');
+            contador.textContent = parseInt(contador.textContent) + 1;
+        }
+    </script>
+</body>
+</html>
